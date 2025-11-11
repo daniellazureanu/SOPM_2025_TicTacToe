@@ -1,38 +1,79 @@
-.App {
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #222222;
+  color: whitesmoke;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-container{
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.square {
+  background: #636363;
+  border: 2px solid #3b3b3b;
+  float: left;
+  font-size: 150px;
+  line-height: 12vw;
+  height: 12vw;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 12vw;
+  color: #cccccc;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 3rem;
+  border: 2px solid #000000;
+  background: #3b3b3b;
+  border-radius: 1rem;
+  gap: 2rem; 
+}
+
+.game-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.game-board {
+  flex-shrink: 0; /* Prevent board from shrinking */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-info {
+  width: 150px; /* Fix width so text doesn’t stretch container */
+  overflow-x: auto; /* Optional: allow horizontal scroll if content is too long */
+}
+
+.game-info button {
+  width: 100%; /* Make buttons fit container width */
+  margin-bottom: 0.5rem;
+  background: #222222;
+  border-radius: 1rem;
+  color: whitesmoke;
+  border: 1px solid gray;
 }
